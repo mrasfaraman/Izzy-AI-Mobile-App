@@ -18,7 +18,7 @@ function InstructionsPage({navigation, route}: any) {
 
   // Function to navigate to speechArticulationPage
   const navigate = () => {
-    navigation.push('scanfaceInstruction', {
+    navigation.push('speechArticulationPage', {
       sessionId: sessionId,
       SessiontypId: SessiontypId,
       routeName: 'speechArticulationPage',

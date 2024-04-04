@@ -144,7 +144,7 @@ function BioDataPage({navigation}: any) {
               <TextInput
                 style={styles.textInput}
                 placeholderTextColor={'#D6D8C0'}
-                value={age.toString().split('.')[0]} 
+                value={age}
                 onChangeText={setAge}
               />
             </View>

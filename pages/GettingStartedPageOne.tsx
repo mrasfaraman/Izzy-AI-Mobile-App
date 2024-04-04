@@ -38,8 +38,8 @@ function GettingStartedPageOne({navigation}: any) {
           </Text>
           <Text style={[styles.base, styles.para]}>
             Embark on a journey to clear and confident speech with IzzyAI. Our
-            avatar-led exercises, powered by AI, target Speech Articulation,
-            Stammering, and Voice Disorders. Let's unlock your communication
+            avatar-led exercises, powered by AI, target Articulation,
+            Stammering, Voice and Language Disorders. Let's unlock your communication
             potential together
           </Text>
           {/* <View style={styles.svgContainer}>

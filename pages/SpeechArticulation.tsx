@@ -778,16 +778,15 @@ function SpeechArticulationPage({navigation, route}: any) {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 marginTop: 20,
-                gap: 20,
                 width: '100%',
+                marginBottom:'10%'
               }}>
-              <EndButton onPress={() => endAssessment()} title="End Now" />
               <View
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  marginBottom: '10%',
+                  marginBottom: 20,
 
                   gap: 10,
                 }}>
@@ -814,6 +813,7 @@ function SpeechArticulationPage({navigation, route}: any) {
                   title="Next Question"
                 />
               </View>
+              <EndButton onPress={() => endAssessment()} title="End Now" />
             </View>
           )}
         </ScrollView>
