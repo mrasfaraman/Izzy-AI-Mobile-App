@@ -62,12 +62,7 @@ function SetupProfilePage({navigation}: any) {
     formData.append('FullName', profileData.name);
     formData.append('Age', profileData.age);
     formData.append('Gender', profileData.gender);
-    formData.append('CheckboxValues', profileData.improvementPreferences.join(','));
-
-    // route?.params?.improvementPreferences.forEach((value, index) => {
-    //   formData.append(`checkboxes[${index}]`, value);
-    // });
-    // formData.append('FaceAuthenticationState ', 'false');
+    formData.append('checkboxes', profileData.improvementPreferences.join(','));
 
     console.log('Body Data ---> ', formData);
     fetch(`${BaseURL}/insert_user_profile`, {
@@ -93,6 +88,15 @@ function SetupProfilePage({navigation}: any) {
     navigation.goBack();
   };
 
+  const handleCheckboxChange = (preference) => {
+    const updatedPreferences = improvementPreferences.includes(preference)
+      ? improvementPreferences.filter((item) => item !== preference)
+      : [...improvementPreferences, preference];
+
+    setImprovementPreferences(updatedPreferences);
+  }; 
+
+  console.log(improvementPreferences)
   return (
     <SafeAreaView>
       <ScrollView>
@@ -183,18 +187,7 @@ function SetupProfilePage({navigation}: any) {
             </Text>
             <CheckBox
               checked={improvementPreferences.includes('narration')}
-              onPress={() => {
-                if (improvementPreferences.includes('narration')) {
-                  setImprovementPreferences(prevState =>
-                    prevState.filter(item => item !== 'narration'),
-                  );
-                } else {
-                  setImprovementPreferences(prevState => [
-                    ...prevState,
-                    'narration',
-                  ]);
-                }
-              }}
+              onPress={() => handleCheckboxChange('narration')}
               iconType="material-community"
               checkedIcon="checkbox-marked"
               uncheckedIcon="checkbox-blank-outline"
@@ -205,18 +198,7 @@ function SetupProfilePage({navigation}: any) {
 
             <CheckBox
               checked={improvementPreferences.includes('speech')}
-              onPress={() => {
-                if (improvementPreferences.includes('speech')) {
-                  setImprovementPreferences(prevState =>
-                    prevState.filter(item => item !== 'speech'),
-                  );
-                } else {
-                  setImprovementPreferences(prevState => [
-                    ...prevState,
-                    'speech',
-                  ]);
-                }
-              }}
+              onPress={() => handleCheckboxChange('speech')}
               iconType="material-community"
               checkedIcon="checkbox-marked"
               uncheckedIcon="checkbox-blank-outline"
@@ -227,18 +209,7 @@ function SetupProfilePage({navigation}: any) {
 
             <CheckBox
               checked={improvementPreferences.includes('voice')}
-              onPress={() => {
-                if (improvementPreferences.includes('voice')) {
-                  setImprovementPreferences(prevState =>
-                    prevState.filter(item => item !== 'voice'),
-                  );
-                } else {
-                  setImprovementPreferences(prevState => [
-                    ...prevState,
-                    'voice',
-                  ]);
-                }
-              }}
+              onPress={() => handleCheckboxChange('voice')}
               iconType="material-community"
               checkedIcon="checkbox-marked"
               uncheckedIcon="checkbox-blank-outline"
@@ -249,18 +220,7 @@ function SetupProfilePage({navigation}: any) {
 
             <CheckBox
               checked={improvementPreferences.includes('fluency')}
-              onPress={() => {
-                if (improvementPreferences.includes('fluency')) {
-                  setImprovementPreferences(prevState =>
-                    prevState.filter(item => item !== 'fluency'),
-                  );
-                } else {
-                  setImprovementPreferences(prevState => [
-                    ...prevState,
-                    'fluency',
-                  ]);
-                }
-              }}
+              onPress={() => handleCheckboxChange('fluency')}
               iconType="material-community"
               checkedIcon="checkbox-marked"
               uncheckedIcon="checkbox-blank-outline"
@@ -269,6 +229,7 @@ function SetupProfilePage({navigation}: any) {
               textStyle={[styles.base, {fontSize: 16, fontWeight: '400'}]}
             />
           </View>
+
           <CustomButton onPress={navigate} title="Next" loading={isLoading} />
         </View>
       </ScrollView>

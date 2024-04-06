@@ -34,8 +34,8 @@ function GettingStartedPageThree({navigation}: any) {
           <Text style={[styles.base, styles.para]}>
             Izzy AI is the only Human Avatar based model that captures
             audio-visual and emotional features of the user and provides a
-            comprehensive assessment. The wide variety of therapy options
-            especially the gamification provide an easy and captivating
+            comprehensive assessment. The wide variety of therapy options,
+            especially the gamification, provides an easy and captivating
             intervention method. Izzy AI model training is on data with
             articulation, stammering, voice, language, narration, phonology,
             learning disabilities.

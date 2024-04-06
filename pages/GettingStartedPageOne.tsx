@@ -40,7 +40,7 @@ function GettingStartedPageOne({navigation}: any) {
             Embark on a journey to clear and confident speech with IzzyAI. Our
             avatar-led exercises, powered by AI, target Articulation,
             Stammering, Voice and Language Disorders. Let's unlock your communication
-            potential together
+            potential together.
           </Text>
           {/* <View style={styles.svgContainer}>
             <BlackDot style={styles.baseDot} />

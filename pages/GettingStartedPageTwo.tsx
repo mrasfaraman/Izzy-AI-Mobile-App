@@ -31,11 +31,11 @@ function GettingStartedPageTwo({navigation}: any) {
           <IzzyAILogo style={{marginTop: 60}} />
 
           <Text style={[styles.base, styles.heading, {marginTop: 50}]}>
-            Your partner at every step in achieving effective communication
+            Your partner at every step in achieving effective communication.
           </Text>
           <Text style={[styles.base, styles.heading2]}>Vision</Text>
           <Text style={[styles.base, styles.para]}>
-            Accessibility to timely assessment and variety of therapeutic exercises for everyone
+            Accessibility to timely assessment and variety of therapeutic exercises for everyone.
           </Text>
           <Text style={[styles.base, styles.heading2]}>Mission</Text>
           <Text style={[styles.base, styles.para]}>

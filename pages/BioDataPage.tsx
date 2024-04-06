@@ -43,7 +43,9 @@ function BioDataPage({navigation}: any) {
       : [...improvementPreferences, preference];
 
     setImprovementPreferences(updatedPreferences);
-  };    
+  };
+  
+  
   const Update = () => {
     setIsLoading(true);
     const profileData = {
@@ -89,8 +91,12 @@ function BioDataPage({navigation}: any) {
         setUserData(userData);
         setName(userData.FullName)
         setAge(userData.Age)
-        setImprovementPreferences(userData.CheckboxValues ? userData.CheckboxValues.split(',') : []);
-      
+        const preferencesString = userData.CheckboxValues || '';
+        const preferencesArray = preferencesString
+          .replace(/[{}"\\']/g, '') // Remove extra characters like curly braces, double quotes, and single quotes
+          .split(','); // Convert string to array
+        
+        setImprovementPreferences(preferencesArray);      
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -101,6 +107,7 @@ function BioDataPage({navigation}: any) {
 
   const handleYes = () => {
     setIsModalVisible(false);
+    navigation.goBack();
   };
 
   console.log(improvementPreferences)
