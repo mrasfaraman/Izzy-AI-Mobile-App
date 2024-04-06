@@ -31,18 +31,15 @@ function GettingStartedPageTwo({navigation}: any) {
           <IzzyAILogo style={{marginTop: 60}} />
 
           <Text style={[styles.base, styles.heading, {marginTop: 50}]}>
-            Your partner at every step in achieving effective communication
+            Your partner at every step in achieving effective communication.
           </Text>
           <Text style={[styles.base, styles.heading2]}>Vision</Text>
           <Text style={[styles.base, styles.para]}>
-            Accessibility to timely assessment and intervention for everyone.
-          </Text>
-          <Text style={[styles.base, styles.para]}>
-            Breaking barriers in receiving assessment and therapy services.
+            Accessibility to timely assessment and variety of therapeutic exercises for everyone.
           </Text>
           <Text style={[styles.base, styles.heading2]}>Mission</Text>
           <Text style={[styles.base, styles.para]}>
-            Izzy AI Avatars based assessments and interventions is tailored to
+            Izzy AI Avatars based assessments and interventions are tailored to
             the specific needs of the users.
           </Text>
           {/* <View style={styles.svgContainer}>
