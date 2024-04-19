@@ -50,14 +50,9 @@ function TherapistProfilePage({navigation, route}: any) {
             source={require('../assets/images/TherapistImage.png')}
           />
 
-          <Text style={[styles.base, styles.title]}>Hey 👋 myself AI SLP</Text>
+          <Text style={[styles.base, styles.title]}>Hello, I'm IzzyAI SLP.</Text>
           <Text style={[styles.base, styles.para]}>
-            Egestas ut nam leo tristique. Sed sit commodo volutpat in quisque.
-            Egestas dictum in risus pulvinar elementum cursus. Egestas ut nam
-            leo tristique. Sed sit commodo volutpat in quisque. Egestas dictum
-            in risus pulvinar elementum cursus. Egestas ut nam leo tristique.
-            Sed sit commodo volutpat in quisque. Egestas dictum in risus
-            pulvinar elementum cursus.
+          I will assist you to overcome your speech language problems. I provide the best possible strategies as per the various needs and preferences of the user. My capabilities include speech recognition, language understanding, and synthesis. I strive to enhance communication experiences for users across different platforms and environments. Let me know how I can assist you further.
           </Text>
 
           {/* <Text>
@@ -94,6 +89,7 @@ const styles = StyleSheet.create({
   para: {
     fontSize: 16,
     paddingHorizontal: 30,
+    textAlign:'justify',
     marginTop: 20,
   },
   img: {

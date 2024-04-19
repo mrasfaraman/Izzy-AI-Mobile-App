@@ -519,7 +519,7 @@ function VoiceDisorderPage({navigation, route}: any) {
         const responseData = await response.json();
 
         console.log(
-          'Assessment stammering result added successfully:',
+          'Assessment vocie result added successfully:',
           responseData,
         );
       } else {

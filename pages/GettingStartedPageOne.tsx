@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
   },
   para: {
     paddingTop: 5,
-    fontSize: 16,
-    textAlign: 'justify',
+    fontSize: 15,
+    textAlign:'justify',
     fontWeight: '400',
     width: '86%',
     marginTop: 10,

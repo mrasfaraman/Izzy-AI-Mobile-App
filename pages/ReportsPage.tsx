@@ -14,6 +14,7 @@ import SearchIcon from '../assets/SearchIcon';
 import LinearGradient from 'react-native-linear-gradient';
 import CalenderIcon from '../assets/CalenderIcon';
 import ReportDetails from '../components/ReportDetails';
+import ExerciseDetails from '../components/ExerciseDetails';
 import {useDataContext} from '../contexts/DataContext';
 import BaseURL from '../components/ApiCreds';
 
@@ -66,7 +67,7 @@ function Card({reportData, assessment, itemNum, navigation}: any) {
                     styles.base,
                     {fontSize: 18, fontWeight: '500', maxWidth: 250},
                   ]}>
-                  {DisorderName}
+                  {DisorderName} Assessment
                 </Text>
 
                 <View
@@ -90,7 +91,7 @@ function Card({reportData, assessment, itemNum, navigation}: any) {
                 style={[
                   styles.base,
                   {
-                    marginLeft: 130,
+                    marginLeft: 70,
                     fontSize: 20,
                     fontWeight: '800',
                     color: '#71D860',
@@ -104,6 +105,101 @@ function Card({reportData, assessment, itemNum, navigation}: any) {
       </TouchableOpacity>
 
       <ReportDetails
+        detailsOpen={detailsOpen}
+        closeDetails={closeDetails}
+        reportData={reportData}
+        itemNum={itemNum}
+      />
+    </>
+  );
+}
+
+function ExerciseCard({reportData, exercise, itemNum}: any) {
+  if (!reportData) {
+    return null; // If reportData is null or undefined, return null to render nothing
+  }
+
+  const {ExerciseDate, DisorderName, Score} = exercise;
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
+  const closeDetails = (val: any) => {
+    setDetailsOpen(val);
+  };
+
+  return (
+    <>
+      <TouchableOpacity onPress={() => setDetailsOpen(true)}>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 1}}
+          colors={['#FF8C00', '#FFD700']}
+          style={{
+            justifyContent: 'center',
+            borderRadius: 16,
+            marginTop: 14,
+          }}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              margin: 1.5,
+              borderRadius: 15,
+              backgroundColor: '#fff',
+              padding: 16,
+            }}>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingVertical: 10,
+              }}>
+              <View style={{}}>
+                <Text
+                  style={[
+                    styles.base,
+                    {fontSize: 18, fontWeight: '500', maxWidth: 250},
+                  ]}>
+                  {DisorderName} Exercise
+                </Text>
+
+                <View
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginTop: 5,
+                  }}>
+                  <CalenderIcon />
+                  <Text
+                    style={[
+                      styles.base,
+                      {fontSize: 14, fontWeight: '500', marginLeft: 5},
+                    ]}>
+                    {new Date(ExerciseDate).toLocaleDateString('en-GB')}
+                  </Text>
+                </View>
+              </View>
+              <Text
+                style={[
+                  styles.base,
+                  {
+                    marginLeft: 80,
+                    fontSize: 20,
+                    fontWeight: '800',
+                    color: '#71D860',
+                  },
+                ]}>
+                {Score.toString().substring(0, 2)}%
+              </Text>
+            </View>
+          </View>
+        </LinearGradient>
+      </TouchableOpacity>
+
+      <ExerciseDetails
         detailsOpen={detailsOpen}
         closeDetails={closeDetails}
         reportData={reportData}
@@ -160,39 +256,53 @@ function ReportsPage({navigation}: any) {
 
           <View style={styles.textInputContainer}>
             <View style={styles.inputContainer}>
-              <SearchIcon />
+              {/* <SearchIcon />
               <TextInput
                 style={styles.textInput}
                 placeholder="Search"
                 placeholderTextColor={'#D6D8C0'}
-              />
+              /> */}
             </View>
-            {reportData &&
-              reportData.AssessmentResults.map((assessment, index) => (
-                <>
-                  <View key={index} style={{marginBottom: 20}}>
-                    <Card
-                      reportData={reportData}
-                      assessment={assessment}
-                      itemNum={index}
-                    />
-                  </View>
-                </>
-              ))}
+            {
+            reportData &&
+  <>
+    {reportData.AssessmentResults.map((assessment, index) => (
+      <View key={index} style={{marginBottom: 20}}>
+        <Card
+          reportData={reportData}
+          assessment={assessment}
+          itemNum={index}
+        />
+      </View>
+    ))}
+    {reportData.UserExercises.map((exercise, index) => (
+      <View key={index} style={{marginBottom: 20}}>
+        <ExerciseCard
+          reportData={reportData}
+          exercise={exercise}
+          itemNum={index}
+        />
+      </View>
+    ))}
+  </>
+}
 
-            {reportData?.AssessmentResults.length === 0 ? (
-              <Text
-                style={{
-                  color: 'darkgrey',
-                  textAlign: 'center',
-                  marginTop: 50,
-                  fontSize: 16,
-                }}>
-                No reports yet!
-              </Text>
-            ) : (
-              <></>
-            )}
+{reportData && 
+  (reportData.AssessmentResults.length === 0 && reportData.UserExercises.length === 0) ? (
+    <Text
+      style={{
+        color: 'darkgrey',
+        textAlign: 'center',
+        marginTop: 50,
+        fontSize: 16,
+      }}>
+      No reports yet!
+    </Text>
+  ) : (
+    <></>
+  )
+}
+
           </View>
         </ScrollView>
       </View>

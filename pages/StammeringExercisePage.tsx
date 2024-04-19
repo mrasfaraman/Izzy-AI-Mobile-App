@@ -404,6 +404,7 @@ function StammeringExercisePage({navigation, route}: any) {
   const naviagte = () => {
     navigation.navigate('resultReportExercises', {
       SessiontypId: SessiontypId,
+      sessionId: sessionId,
       startTime: startTime,
       correctAnswers: correctAnswersCount,
       incorrectAnswers: incorrectQuestions.length,

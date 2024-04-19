@@ -291,7 +291,7 @@ function ResultReportArticulation({navigation, route}: any) {
     const formData = new FormData();
     formData.append('UserID', userId);
     formData.append('DisorderID', 2);
-    formData.append('SessionID', SessiontypId);
+    formData.append('SessionID', sessionId);
     formData.append('ExerciseDate', formattedDate); // Assuming exerciseDate is in 'YYYY-MM-DD' format
     formData.append('SoundIDList', JSON.stringify([])); // Use soundNames array
     formData.append('CompletionStatus', 'complete');

@@ -367,7 +367,7 @@ const TherapistName = ({navigation}: any) => {
             resizeMode="stretch"
             style={styles.avatarIcon}
           />
-          <Text style={styles.userName}>{item.isUser ? 'You' : 'Izzy'}</Text>
+          <Text style={styles.userName}>{item.isUser ? 'You' : 'IzzyAI'}</Text>
         </View>
         <View
           key={index}
@@ -453,7 +453,7 @@ const TherapistName = ({navigation}: any) => {
                       source={require('../assets/images/microphone.png')}
                       style={styles.avatarIcon}
                     />
-                    <Text style={styles.userName}>Izzy</Text>
+                    <Text style={styles.userName}>IzzyAI</Text>
                   </View>
                   <View style={styles.otherBubble}>
                     <DotIndicator size={7} count={3} color={'#2DEEAA'} />

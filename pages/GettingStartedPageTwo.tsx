@@ -35,11 +35,11 @@ function GettingStartedPageTwo({navigation}: any) {
           </Text>
           <Text style={[styles.base, styles.heading2]}>Vision</Text>
           <Text style={[styles.base, styles.para]}>
-            Accessibility to timely assessment and variety of therapeutic exercises for everyone.
+            Accessibility to timely assessment and variety of the therapeutic exercises for everyone.
           </Text>
           <Text style={[styles.base, styles.heading2]}>Mission</Text>
           <Text style={[styles.base, styles.para]}>
-            Izzy AI Avatars based assessments and interventions are tailored to
+            IzzyAI Avatars based assessments and interventions are tailored to
             the specific needs of the users.
           </Text>
           {/* <View style={styles.svgContainer}>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   para: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'justify',
     fontWeight: '400',
     width: '85%',

@@ -54,6 +54,7 @@ import VoiceExerciseGame from './pages/VoiceExerciseGame';
 import OtpScreen from './pages/OtpScreen';
 import NewPassword from './pages/NewPassword';
 import BioDataPage from './pages/BioDataPage';
+import Games from './pages/Games';
 
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +68,7 @@ function App(): React.JSX.Element {
           <NativeBaseProvider>
             <NavigationContainer>
               <Stack.Navigator screenOptions={{headerShown: false}}>
+              
                 <Stack.Screen
                   name="startedOne"
                   component={GettingStartedPageOne}
@@ -113,6 +115,10 @@ function App(): React.JSX.Element {
                   component={BaselineQuestions}
                 />
                 <Stack.Screen
+                  name="voiceExerciseGame"
+                  component={VoiceExerciseGame}
+                />
+                <Stack.Screen
                   name="profileSetupSuccess"
                   component={ProfileSetupSuccessPage}
                 />
@@ -135,6 +141,8 @@ function App(): React.JSX.Element {
                 />
                 <Stack.Screen name="passagePage" component={PassagePage} />
                 <Stack.Screen name="passagePage2" component={PassagePageTwo} />
+                <Stack.Screen name="games" component={Games} />
+
 
                 <Stack.Screen
                   name="instructionsPage"
@@ -153,10 +161,7 @@ function App(): React.JSX.Element {
                   name="stammeringExercisePage"
                   component={StammeringExercisePage}
                 />
-                <Stack.Screen
-                  name="voiceExerciseGame"
-                  component={VoiceExerciseGame}
-                />
+                
                 <Stack.Screen
                   name="resultReportExercises"
                   component={ResultReportExercises}

@@ -338,6 +338,7 @@ function SpeechExercisePage({navigation, route}: any) {
   const naviagte = () => {
     navigation.navigate('resultReport', {
       SessiontypId: SessiontypId,
+      sessionId: sessionId,
       startTime: startTime,
       correctAnswers: correctAnswersCount,
       incorrectAnswers: incorrectQuestions.length,

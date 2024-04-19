@@ -35,7 +35,7 @@ function ProfileSetupSuccessPage({navigation}: any) {
           <SuccessIcon />
           <IzzyAILogo style={{marginTop: 15}} />
           <Text style={[styles.base, styles.heading]}>
-            Your izzy profile has setup successfully
+            Your IzzyAI profile has setup successfully
           </Text>
         </ScrollView>
       </View>

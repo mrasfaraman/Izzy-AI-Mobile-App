@@ -3,7 +3,7 @@ import {Actionsheet, Box} from 'native-base';
 import {View, StyleSheet, Text} from 'react-native';
 import CustomButton from './Button';
 
-function ReportDetails({
+function ExerciseDetails({
   closeDetails,
   detailsOpen,
   navigation,
@@ -13,7 +13,7 @@ function ReportDetails({
   if (!reportData) {
     return null; // If reportData is null or undefined, return null to render nothing
   }
-  const data = reportData.AssessmentResults[itemNum];
+  const data = reportData.UserExercises[itemNum];
   console.log(data);
 
   console.log('Data', reportData);
@@ -26,7 +26,7 @@ function ReportDetails({
               styles.base,
               {textAlign: 'center', fontSize: 16, fontWeight: '500'},
             ]}>
-            {data.DisorderName} Assessment 
+            {data.DisorderName} Exercise
           </Text>
 
           <View style={{marginTop: 40}}>
@@ -47,7 +47,7 @@ function ReportDetails({
             <View style={{marginVertical: 5}}>
               <Text style={[styles.base, {fontSize: 16}]}>Date:</Text>
               <Text style={[styles.base, {fontSize: 16}]}>
-                {new Date(data.AssessmentDate).toLocaleDateString('en-GB')}
+                {new Date(data.ExerciseDate).toLocaleDateString('en-GB')}
               </Text>
             </View>
 
@@ -56,7 +56,7 @@ function ReportDetails({
                 Number of Session:
               </Text>
               <Text style={[styles.base, {fontSize: 16}]}>
-                {data['Session No']}
+              {data['Session No']}
               </Text>
             </View>
 
@@ -86,7 +86,7 @@ function ReportDetails({
   );
 }
 
-export default ReportDetails;
+export default ExerciseDetails;
 
 const styles = StyleSheet.create({
   base: {

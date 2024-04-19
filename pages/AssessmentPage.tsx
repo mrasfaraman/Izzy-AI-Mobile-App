@@ -287,12 +287,12 @@ if (endTimeLessThan6Hours === null || endTimeLessThan6Hours === false) {
 
           <View style={styles.textInputContainer}>
             <View style={styles.inputContainer}>
-              <SearchIcon />
+              {/* <SearchIcon />
               <TextInput
                 style={styles.textInput}
                 placeholder="Search"
                 placeholderTextColor={'#D6D8C0'}
-              />
+              /> */}
             </View>
           </View>
 

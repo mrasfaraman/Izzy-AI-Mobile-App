@@ -30,15 +30,9 @@ function GettingStartedPageThree({navigation}: any) {
           }}>
           <IzzyAILogo style={{marginTop: 60}} />
 
-          <Text style={[styles.base, styles.heading]}>Izzy AI Rationale</Text>
+          <Text style={[styles.base, styles.heading]}>IzzyAI Rationale</Text>
           <Text style={[styles.base, styles.para]}>
-            Izzy AI is the only Human Avatar based model that captures
-            audio-visual and emotional features of the user and provides a
-            comprehensive assessment. The wide variety of therapy options,
-            especially the gamification, provides an easy and captivating
-            intervention method. Izzy AI model training is on data with
-            articulation, stammering, voice, language, narration, phonology,
-            learning disabilities.
+          IzzyAI is the only human avatar-based model that captures audio-visual and emotional features of the user and provides a comprehensive assessment. The wide variety of therapy options, especially the gamification, provides an easy and captivating intervention method. IzzyAI model training is based on data with articulation, stammering, voice, language, narration, phonology, and learning disabilities.
           </Text>
           {/* <View style={styles.svgContainer}>
             <WhiteDot style={styles.baseDot} />
@@ -88,7 +82,7 @@ const styles = StyleSheet.create({
   },
   para: {
     paddingTop: 5,
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'justify',
     fontWeight: '400',
     width: '85%',

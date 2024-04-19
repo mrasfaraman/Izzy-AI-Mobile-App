@@ -1,52 +1,59 @@
-import React, {useRef} from 'react';
-import {SafeAreaView, StyleSheet, Button} from 'react-native';
-import {WebView} from 'react-native-webview';
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import CustomHeader from '../components/CustomHeader';
+import { useDataContext } from '../contexts/DataContext';
 
-const VoiceExerciseGame = () => {
-  const webViewRef = useRef(null);
 
-  const handleSpacePress = () => {
-    webViewRef.current.injectJavaScript(
-      "document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 32 }));",
-    );
+
+const VoiceExerciseGame = ({ navigation }) => {
+  const handleButtonClick = (url) => {
+    navigation.navigate('games', { url });
   };
 
-  const gameUrls = [
-    'https://machinescreen.itch.io/getmeoutofhere',
-    'https://playground.babylonjs.com/#11BXS0#72',
-  ];
-
-  // Function to select a random URL from the array
-  const getRandomUrl = () => {
-    const randomIndex = Math.floor(Math.random() * gameUrls.length);
-    return gameUrls[randomIndex];
+  const navigateBack = () => {
+    navigation.navigate('exercisePage');
   };
 
-  // Selected game URL
-  const gameUrl = getRandomUrl();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <WebView
-        ref={webViewRef}
-        source={{uri: gameUrl}}
-        style={styles.webView}
-        originWhitelist={['*']}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-        allowsFullscreenVideo={true}
-      />
-      <Button title="Space" onPress={handleSpacePress} />
-    </SafeAreaView>
+    <>
+          <CustomHeader title="Games" goBack={navigateBack} />
+
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => handleButtonClick('https://5829-20-2-225-3.ngrok-free.app/start_blow_game/60/3')}
+      >
+        <Text style={styles.buttonText}>Start Blow Game</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => handleButtonClick('https://5829-20-2-225-3.ngrok-free.app/start_aaa_game/60/3')}
+      >
+        <Text style={styles.buttonText}>Start AAA Game</Text>
+      </TouchableOpacity>
+    </View></>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  webView: {
-    flex: 1,
+  button: {
+    backgroundColor: 'black',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 20,
+    marginVertical: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
