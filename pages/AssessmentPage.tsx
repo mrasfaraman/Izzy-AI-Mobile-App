@@ -65,7 +65,6 @@ function AssessmentPage({navigation}: any) {
           // Parse the inner array string into an array of booleans
           const parsedAnswers = JSON.parse(innerArrayString);
 
-          // Check if the first 14 elements of the first array are all true
           const first14Yes =
             parsedAnswers.slice(0, 14).filter(value => value).length > 7;
           setFirstAnswer(first14Yes);

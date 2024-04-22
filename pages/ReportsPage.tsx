@@ -91,13 +91,13 @@ function Card({reportData, assessment, itemNum, navigation}: any) {
                 style={[
                   styles.base,
                   {
-                    marginLeft: 70,
+                    marginLeft: 50,
                     fontSize: 20,
                     fontWeight: '800',
                     color: '#71D860',
                   },
                 ]}>
-                {Score.toString().substring(0, 2)}%
+                100%
               </Text>
             </View>
           </View>
@@ -186,7 +186,7 @@ function ExerciseCard({reportData, exercise, itemNum}: any) {
                 style={[
                   styles.base,
                   {
-                    marginLeft: 80,
+                    marginLeft: 50,
                     fontSize: 20,
                     fontWeight: '800',
                     color: '#71D860',

@@ -74,7 +74,7 @@ function ScanFaceInstruction({navigation, route}: any) {
                   marginTop: 10,
                 },
               ]}>
-              Pleae take a clear picture of yourself, it will be used further for authentication purpose
+            Please take a clear picture of yourself. It will be used for authentication purposes.
             </Text>
           </View>
 
